@@ -15,7 +15,7 @@
         $('#myform').submit(function(e){
             e.preventDefault();
             var  money = $('#addmoney').val();
-            alert(money);
+
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -44,25 +44,27 @@
 
 </script>
 
-<ul id="slide-out" class="sidenav light-green">
+<ul id="slide-out" class="sidenav blue-grey">
   <li>
-        <div class="user-view">
-            <div class="background">
-                <i class="person"></i>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Profil</span>
+                        <p><i class="material-icons">person</i>  {{ $users->name }}</p>
+                        <p><i class="material-icons">email</i>  {{ $users ->email}}</p>
+                    </div>
+                </div>
             </div>
-            <span class=" name">
-                    <i class="material-icons">person</i>  {{ $users->name }}</span>
-            <span class=" email">
-                    <i class="material-icons">email</i>  {{ $users ->email}}</span>
         </div>
   </li>
   <li>
     <form id ="myform"  method="POST" action="/add_money">
         @csrf
-        <div>
-            <label for="addmoney">Ajouter<label>
-            <input id="addmoney" type ="number" name="addmoney">
-
+        <div class="white-text">
+            <p class="m6"> Monnaie
+                <input id="addmoney" type ="text" name="addmoney" placeholder="Add money">
+            </p>
         </div>
 
     </form>
