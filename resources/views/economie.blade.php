@@ -51,8 +51,8 @@
                 <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
                         <span class="card-title">Profil</span>
-                        <p><i class="material-icons">person</i>  {{ $users->name }}</p>
-                        <p><i class="material-icons">email</i>  {{ $users ->email}}</p>
+                        <p class="valign-wrapper"><i class="material-icons">person</i>  {{ $users->name }}</p>
+                        <p class="valign-wrapper"><i class="material-icons">email</i>  {{ $users ->email}}</p>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
   <li>
     <form id ="myform"  method="POST" action="/add_money">
         @csrf
-        <div class="white-text">
+        <div class="white-text center-align">
             <p class="m6"> Monnaie
                 <input id="addmoney" type ="text" name="addmoney" placeholder="Add money">
             </p>
@@ -74,8 +74,8 @@
 
 
 <div class="row">
-    <div class="col s4"></div>
-    <div class="col s8">
+
+    <div class="col s12 center-align">
         <p style="font-size:28px;" id="solde" class="light-green-text">Votre solde : {{ $somme }} <i class="material-icons">euros</i></p>
 
     </div>

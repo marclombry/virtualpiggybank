@@ -27,7 +27,9 @@
         body{
             background:url({{ asset('img/piggy.jpg') }});
         }
-
+        .row{
+            margin:0;
+        }
     </style>
 </head>
 <body>
